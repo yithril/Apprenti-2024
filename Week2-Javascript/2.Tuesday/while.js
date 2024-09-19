@@ -8,3 +8,6 @@ while(dormammuHasHadEnough > 0){
 
 console.log("The earth is saved");
 
+while(true){
+  
+}
