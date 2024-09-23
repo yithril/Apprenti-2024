@@ -1,0 +1,32 @@
+body {
+    text-align: center;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    font-size: 3rem; 
+}
+
+select {
+    font-size: 2rem; 
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+}
+
+#country-flag {
+    margin-top: 20px;
+    width: 300px; 
+    height: auto;
+}

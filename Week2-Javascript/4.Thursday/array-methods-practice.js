@@ -17,22 +17,35 @@ const employees = [
   ];
   
 //1 Find the first employee who is a "Sales Manager".
+let saleManager = employees.find(x => x.jobTitle === "Sales Manager");
 
 //2 Find the first employee in the "Engineering" department who is younger than 30.
+let engineerUnder30 = employees.find(x => x.department === "Engineering" && x.age < 30);
 
 //3 Find the first employee who works in "HR" and is older than 30.
+let hrdept = employees.find(x => x.department === "HR" && x.age > 30);
 
 //CHALLENGE 
 //4 Find the first employee whose name starts with "I"
 //There MAY just be a special function for this! Check MDN
+let firstI = employees.find(x => x.name.startsWith("I"));
+
+let findI = employees.find(x => x.name[0] === "I");
 
 //5 Check if any employee is a "DevOps Engineer".
+let devEngineer = employees.some(y => y.department === "DevOps Engineer");
 
 //6 Check if there is at least one employee in "Marketing" who is over 35.
+let marketing = employees.some(x => x.department === "Marketing" && x.age > 35);
 
 //7 Verify if any employee in "HR" is younger than 28.
+let employee = employees.some(x => x.department === "HR" && x.age < 28);
 
 //8 Check if all employees in "Engineering" are younger than 50.
+let employeesInEngineering = employees.filter(x => x.department === "Engineering")
+                                      .every(x => x.age < 50);
+
+//console.log(employeesInEngineering);
 
 //9 Check if every employee in "Sales" is a "Sales Manager".
 
@@ -40,5 +53,6 @@ const employees = [
 
 //CHALLENGE
 //Try out the following code:
-//employees.forEach(y => console.log(`${y.name} - ${y.age} - ${y.jobTitle} - ${y.department}`));
+//this is a for loop
+employees.forEach(y => console.log(`${y.name} - ${y.age} - ${y.jobTitle} - ${y.department}`));
 //11 What does forEach do?
