@@ -1,0 +1,123 @@
+json server is a library that lets you run your api locally on your machine
+Normally its used for testing and proof of concept. It would never
+be used in a real setting for a real api with real people.
+
+We're going to use it to learn how APIs work!
+
+Use Postman to make the requests to the URL and server
+what kind of data you get back.
+
+Instructions for Practicing HTTP Verbs with JSON Server
+GET Requests
+
+    Get all persons
+        URL: http://localhost:3000/persons
+        HTTP Method: GET
+        Description: Retrieves a list of all persons.
+        Question: What do you expect to get back when you make this request?
+
+    Get a specific person by ID
+        URL: http://localhost:3000/persons/1
+        HTTP Method: GET
+        Description: Retrieves the person with ID 1.
+        Question: What do you expect to get back when you make this request?
+
+    Get all pets
+        URL: http://localhost:3000/pets
+        HTTP Method: GET
+        Description: Retrieves a list of all pets.
+        Question: What do you expect to get back when you make this request?
+
+    Get pets by owner ID
+        URL: http://localhost:3000/pets?ownerId=1
+        HTTP Method: GET
+        Description: Retrieves all pets owned by the person with ID 1.
+        Question: What do you expect to get back when you make this request?
+
+POST Requests
+
+    Create a new person
+        URL: http://localhost:3000/persons
+        HTTP Method: POST
+        Request Body:
+
+        perl
+
+    {
+      "name": "David",
+      "age": 28,
+      "email": "david@example.com"
+    }
+
+    Description: Creates a new person with the given details.
+    Question: What do you expect to get back when you make this request?
+
+Create a new pet
+
+    URL: http://localhost:3000/pets
+    HTTP Method: POST
+    Request Body:
+
+    json
+
+        {
+          "name": "Buddy",
+          "type": "dog",
+          "ownerId": 2
+        }
+
+        Description: Creates a new pet with the given details.
+        Question: What do you expect to get back when you make this request?
+
+PUT Requests
+
+    Update a person's information
+        URL: http://localhost:3000/persons/1
+        HTTP Method: PUT
+        Request Body:
+
+        perl
+
+    {
+      "name": "Alice Smith",
+      "age": 31,
+      "email": "alice.smith@example.com"
+    }
+
+    Description: Updates the details of the person with ID 1.
+    Question: What do you expect to get back when you make this request?
+
+Update a pet's information
+
+    URL: http://localhost:3000/pets/1
+    HTTP Method: PUT
+    Request Body:
+
+    json
+
+        {
+          "name": "Maximus",
+          "type": "dog",
+          "ownerId": 1
+        }
+
+        Description: Updates the details of the pet with ID 1.
+        Question: What do you expect to get back when you make this request?
+
+DELETE Requests
+
+    Delete a person
+        URL: http://localhost:3000/persons/1
+        HTTP Method: DELETE
+        Description: Deletes the person with ID 1.
+        Question: What do you expect to get back when you make this request?
+
+    Delete a pet
+        URL: http://localhost:3000/pets/1
+        HTTP Method: DELETE
+        Description: Deletes the pet with ID 1.
+        Question: What do you expect to get back when you make this request?
+
+Summary
+
+By following these instructions, you will practice forming HTTP requests using different verbs (GET, POST, PUT, DELETE) and understand how to use path parameters and query parameters. For each request, consider what kind of response you expect to receive.

@@ -1,0 +1,48 @@
+{
+    "persons": [
+      {
+        "id": "1",
+        "name": "Alice",
+        "age": 30,
+        "email": "alice@example.com"
+      },
+      {
+        "name": "Charlie",
+        "age": 37,
+        "email": "charliesnewemail@example.com",
+        "id": "3"
+      },
+      {
+        "id": "58dd",
+        "name": "Alouiscious",
+        "age": 1000,
+        "email": "whatever@example.com"
+      },
+      {
+        "id": "ec52",
+        "name": "George",
+        "age": 10000,
+        "email": "hello@whatever.com"
+      }
+    ],
+    "pets": [
+      {
+        "id": "1",
+        "name": "Max",
+        "type": "dog",
+        "ownerId": 1
+      },
+      {
+        "id": "2",
+        "name": "Whiskers",
+        "type": "cat",
+        "ownerId": 2
+      },
+      {
+        "id": "3",
+        "name": "Bubbles",
+        "type": "fish",
+        "ownerId": 1
+      }
+    ]
+  }
