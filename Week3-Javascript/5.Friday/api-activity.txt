@@ -7,6 +7,11 @@ We're going to use it to learn how APIs work!
 Use Postman to make the requests to the URL and server
 what kind of data you get back.
 
+Remember to run json-server out of the folder where the
+db.json file is. The command is:
+
+json-server --watch db.json
+
 Instructions for Practicing HTTP Verbs with JSON Server
 GET Requests
 
