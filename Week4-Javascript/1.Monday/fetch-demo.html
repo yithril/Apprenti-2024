@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="course-form">
+        <label for="courseName">Course Name:</label>
+        <input id="courseName" type="text" placeholder="Enter course name" required /><br>
+
+        <label for="courseNum">Course Number:</label>
+        <input id="courseNum" type="number" placeholder="Enter course number" required /><br>
+
+        <label for="dept">Department:</label>
+        <input id="dept" type="text" placeholder="Enter department" required /><br>
+
+        <label for="instructor">Instructor:</label>
+        <input id="instructor" type="text" placeholder="Enter instructor's name" required /><br>
+
+        <label for="numDays">Number of Days:</label>
+        <input id="numDays" type="number" placeholder="Enter number of days" required /><br>
+
+        <label for="startDate">Start Date:</label>
+        <input id="startDate" type="date" placeholder="Enter start date" required /><br>
+
+        <button type="submit">Add Course</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Course Name</th>
+                <th>Course Number</th>
+                <th>Department</th>
+                <th>Instructor</th>
+                <th>Number of Days</th>
+                <th>Start Date</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+    <script src="fetch-demo.js"></script>
+</body>
+</html>
