@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -29,6 +28,17 @@ public class Main {
                 case 1:
                     listAllVehicles(vehicles);
                     break;
+                case 2:
+                    System.out.println("What is the make and model you're looking for?");
+                    scanner.nextLine();
+                    String makeModel = scanner.nextLine();
+                    searchByMakeAndModel(vehicles, makeModel);
+                    break;
+                case 4:
+                    System.out.println("What color of car are you looking for?");
+                    scanner.nextLine();
+                    String color = scanner.nextLine();
+                    searchByColor(vehicles, color);
                 case 6:
                     System.out.println("Ending program...");
                     System.exit(0);
