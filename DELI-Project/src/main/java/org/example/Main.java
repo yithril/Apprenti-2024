@@ -17,11 +17,6 @@ public class Main {
 
             int choice = scanner.nextInt();
 
-            if (choice == 0) {
-                System.out.println("Total order cost: $" + String.format("%.2f", order.getOrderTotal()));
-                break;
-            }
-
             switch (choice) {
                 case 1:
                     addSandwich(); // Placeholder for adding a sandwich
