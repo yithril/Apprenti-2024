@@ -33,7 +33,7 @@ public class Main {
                     addChips(order); // Helper method to add chips
                     break;
                 case 4:
-                    System.out.println("Current order total: $" + String.format("%.2f", order.getOrderTotal()));
+                    order.printOrderDetails();
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");

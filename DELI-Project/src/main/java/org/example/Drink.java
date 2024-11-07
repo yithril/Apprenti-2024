@@ -18,4 +18,8 @@ public class Drink implements MenuItem {
             return 3;
         }
     }
+
+    public String getDescription() {
+        return drinkSize + " Drink";
+    }
 }

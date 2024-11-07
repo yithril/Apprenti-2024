@@ -39,13 +39,15 @@ public class Sandwich implements MenuItem {
         return totalCost;
     }
 
-    // Method to display the sandwich details
-    public void displaySandwich() {
-        System.out.println("Sandwich Size: " + (size == 1 ? "4\"" : size == 2 ? "8\"" : "12\""));
-        System.out.println("Ingredients:");
-        for (Ingredient ingredient : ingredients) {
-            System.out.println("- " + ingredient.getName() + (ingredient.isIncluded() ? " (Included)" : ""));
+    @Override
+    public String getDescription() {
+        String description = "Sandwich (Size: " + (size == 1 ? "4\"" : size == 2 ? "8\"" : "12\"") + ") with ";
+        for (int i = 0; i < ingredients.size(); i++) {
+            description += ingredients.get(i).getName();
+            if (i < ingredients.size() - 1) {
+                description += ", ";
+            }
         }
-        System.out.printf("Total Cost: $%.2f%n", getCost());
+        return description;
     }
 }

@@ -17,4 +17,12 @@ public class Order {
         }
         return sum;
     }
+
+    public void printOrderDetails() {
+        System.out.println("Order Breakdown:");
+        for (MenuItem item : items) {
+            System.out.printf("- %s: $%.2f%n", item.getDescription(), item.getCost());
+        }
+        System.out.printf("Total Cost: $%.2f%n", getOrderTotal());
+    }
 }
