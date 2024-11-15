@@ -51,15 +51,32 @@ public class IngredientLoader {
         ingredients.add(new Ingredient("Sauce", IngredientCategory.SIDES, true, 0.0));
     }
 
+    public static Ingredient getIngredientByIndex(IngredientCategory category, int index) {
+        List<Ingredient> filteredIngredients = new ArrayList<>();
+        for (Ingredient ingredient : ingredients) {
+            if (ingredient.getCategory() == category) {
+                filteredIngredients.add(ingredient);
+            }
+        }
+
+        if (index < 0 || index >= filteredIngredients.size()) {
+            throw new IllegalArgumentException("Invalid index. Please select a valid ingredient number.");
+        }
+
+        return filteredIngredients.get(index);
+    }
+
     public static void displayIngredientsByCategory(IngredientCategory category) {
         System.out.println("Ingredients in category: " + category);
+        int index = 0;
         for (Ingredient ingredient : ingredients) {
             if (ingredient.getCategory() == category) {
                 if (ingredient.isIncluded()) {
-                    System.out.printf("%s - Included%n", ingredient.getName());
+                    System.out.printf("%d. %s - Included%n", index, ingredient.getName());
                 } else {
-                    System.out.printf("%s - Base Cost: $%.2f%n", ingredient.getName(), ingredient.getCost(1));
+                    System.out.printf("%d. %s - Base Cost: $%.2f%n", index, ingredient.getName(), ingredient.getCost(1));
                 }
+                index++;
             }
         }
     }

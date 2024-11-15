@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    maven {
+        url = uri(nexusPublicRepoURL)
+        credentials {
+            username = nexusUsername
+            password = nexusPassword
+        }
+    }
+    maven {
+        url = uri(nexusReleaseRepoURL)
+        credentials {
+            username = nexusUsername
+            password = nexusPassword
+        }
+    }
+    maven {
+        url = uri(nexusSnapshotRepoURL)
+        credentials {
+            username = nexusUsername
+            password = nexusPassword
+        }
+    }
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -9,5 +9,9 @@ public class Main {
         ShoppingCart cart = new ShoppingCart();
 
         cart.addCartItem(product);
+
+        Sandwich sandwich = new Sandwich();
+
+
     }
 }
