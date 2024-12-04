@@ -1,0 +1,52 @@
+Instructions:
+
+Open the example.html file in your browser to see how the website behaves.
+Carefully read the example.js file. Use the guiding questions below to understand how the code works.
+Write your answers as comments directly in the example.js file under each question.
+
+Part 1: What Are We Targeting?
+
+What is document.getElementById, and how does it work?
+(Hint: Look at how the headerTitle variable is defined. What element is it selecting?)
+
+What does document.getElementsByClassName do?
+(Hint: Check how the subtitles variable is used. Why do we need to add [0] at the end to target the first element?)
+
+What is document.querySelector, and how is it different from getElementById or getElementsByClassName?
+(Hint: Look at the revealButton variable. Why does it use #reveal-button instead of just reveal-button?)
+
+What is document.querySelectorAll, and how is it different from querySelector?
+(Hint: Look at how footerItems is used. Why do we need a loop to apply styles to all the items?)
+
+Part 2: Using What We’ve Targeted
+
+What is happening in this line of code?
+headerTitle.style.borderBottom = '4px solid #6200ea';
+(Hint: What is style.borderBottom? Is it adding or changing something?)
+
+Why does this code use classList.toggle for the secret message?
+(Hint: Look at the click event listener for revealButton. How does toggling the class make the message appear or disappear?)
+
+What is the difference between using element.style and adding/removing classes?
+(Hint: Compare how styles are applied to headerTitle versus how the hidden class is toggled on #secret-message.)
+
+Part 3: Making the Page Interactive
+What is an event listener, and how is it used here?
+(Hint: Look at the addEventListener function for revealButton. What happens when the button is clicked?)
+
+What do the mouseover and mouseout event listeners do for the footer items?
+(Hint: Why does the color change when you hover over a footer item, and why does it change back when you stop hovering?)
+
+What happens if you remove the .hidden class from the #secret-message element in the HTML file?
+(Hint: Test this in your browser. Does the secret message behave differently? Why?)
+
+Part 4: Practice Making Changes
+Change the button text dynamically!
+Add the following code to the click event listener for revealButton:
+revealButton.textContent = "Hide Message";
+What does this do, and how does it improve the button's functionality?
+
+Experiment with styles:
+Add this line of code inside the click event listener:
+headerTitle.style.color = "green";
+What happens to the header title when you click the button now?

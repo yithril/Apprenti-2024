@@ -1,0 +1,26 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+#main-title {
+    color: darkslategray;
+}
+
+.item {
+    padding: 5px;
+    list-style: none;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.clicked {
+    border: 2px solid red;
+}
+
+.notice {
+    font-weight: bold;
+    color: red;
+}
