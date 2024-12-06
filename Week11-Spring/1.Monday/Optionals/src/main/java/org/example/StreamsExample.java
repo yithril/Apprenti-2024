@@ -37,6 +37,7 @@ public class StreamsExample {
                 new Product("Digital Photo Frame", 79.99, "StorageSolutions")
                 );
 
+        products.forEach(x -> System.out.println(x.getName()));
         //I want all the products that Gadget World manufactures
         var gadgetWorldProducts = products.stream().filter(x -> x.getManufacturer().equalsIgnoreCase("GadgetWorld")).toList();
 

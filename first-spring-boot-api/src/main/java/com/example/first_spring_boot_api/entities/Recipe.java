@@ -1,9 +1,6 @@
 package com.example.first_spring_boot_api.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
@@ -24,7 +21,7 @@ public class Recipe {
     private String instructions;
 
     private boolean isVegan;
-
+    
     //You must have a constructor without parameters
     public Recipe(){
 
