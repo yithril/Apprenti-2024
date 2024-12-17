@@ -13,6 +13,16 @@ export const apiService = {
             throw error;
         }
     },
+    async getById(endpoint:string, id:string):Promise<Recipe> {
+        try{
+            const response = await axios.get<Recipe>(`${this.baseUrl}/${endpoint}/${id}`);
+            return response.data;
+        }
+        catch(error){
+            console.error('Error in getById:', error);
+            throw error;
+        }
+    },
     async addRecipe(endpoint:string, recipe: Partial<Recipe>) : Promise<Recipe> {
         try{
             const response = await axios.post<Recipe>(`${this.baseUrl}/${endpoint}`, recipe);

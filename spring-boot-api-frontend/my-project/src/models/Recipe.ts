@@ -4,4 +4,5 @@ export interface Recipe {
     ingredients: string;
     instructions: string;
     isVegan: boolean;
+    recipeImage:string;
 }
