@@ -28,6 +28,8 @@ public class Recipe {
 
     private boolean isVegan;
 
+    private String recipeImage;
+
     //EAGER fetching means you want the database to load the recipe
     //AND the nutrition facts at the same time.
     //The default is lazy loading, meaning you'll ask for the other entity
@@ -149,5 +151,13 @@ public class Recipe {
 
     public void setLastModified(LocalDateTime lastModified) {
         this.lastModified = lastModified;
+    }
+
+    public String getRecipeImage() {
+        return recipeImage;
+    }
+
+    public void setRecipeImage(String recipeImage) {
+        this.recipeImage = recipeImage;
     }
 }

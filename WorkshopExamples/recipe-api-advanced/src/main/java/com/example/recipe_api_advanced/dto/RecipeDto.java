@@ -7,6 +7,7 @@ public class RecipeDto {
     private String name;
     private String ingredients;
     private String instructions;
+    private String recipeImage;
     private NutritionFactsDto nutritionFacts;
 
     // Static factory method
@@ -21,6 +22,7 @@ public class RecipeDto {
         dto.name = recipe.getName();
         dto.ingredients = recipe.getIngredients();
         dto.instructions = recipe.getInstructions();
+        dto.recipeImage = recipe.getRecipeImage();
         dto.nutritionFacts = nutritionFactsDTO;
         return dto;
     }
@@ -63,5 +65,13 @@ public class RecipeDto {
 
     public void setNutritionFacts(NutritionFactsDto nutritionFacts) {
         this.nutritionFacts = nutritionFacts;
+    }
+
+    public String getRecipeImage() {
+        return recipeImage;
+    }
+
+    public void setRecipeImage(String recipeImage) {
+        this.recipeImage = recipeImage;
     }
 }

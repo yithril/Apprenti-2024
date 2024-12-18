@@ -4,6 +4,7 @@ public class CreateUpdateRecipeDto {
     private String name;
     private String ingredients;
     private String instructions;
+    private String recipeImage;
 
     public String getName() {
         return name;
@@ -27,5 +28,13 @@ public class CreateUpdateRecipeDto {
 
     public void setInstructions(String instructions) {
         this.instructions = instructions;
+    }
+
+    public String getRecipeImage() {
+        return recipeImage;
+    }
+
+    public void setRecipeImage(String recipeImage) {
+        this.recipeImage = recipeImage;
     }
 }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    integrity="sha384-...your-integrity-hash..."
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Basketball Game Predictor</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Dropdown for games -->
+                <label for="game-dropdown" class="form-label">Select a Game</label>
+                <select id="game-dropdown" class="form-select">
+                    <option value="" disabled selected>Select a game</option>
+                </select>
+
+                <!-- Radio buttons for team selection (initially hidden) -->
+                <div id="team-selection" class="mt-4 d-none">
+                    <label class="form-label">Predict the Winner</label>
+                    <div class="form-check">
+                        <input type="radio" id="teamA" name="team" class="form-check-input" value="teamA">
+                        <label for="teamA" id="label-teamA" class="form-check-label"></label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="teamB" name="team" class="form-check-input" value="teamB">
+                        <label for="teamB" id="label-teamB" class="form-check-label"></label>
+                    </div>
+                    <button id="submit-prediction" class="btn btn-primary mt-3">Submit Prediction</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="src/main.ts"></script>
+</body>
+</html>

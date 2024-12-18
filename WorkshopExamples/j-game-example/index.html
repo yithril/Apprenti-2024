@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-Based Game</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+        #game-screen {
+            flex: 3;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+        #sidebar {
+            flex: 1;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-screen">
+        <h1>Game Node</h1>
+        <p id="node-description">Loading...</p>
+        <button onclick="gameEngine.move('north')">Go North</button>
+        <button onclick="gameEngine.move('south')">Go South</button>
+        <button onclick="gameEngine.move('east')">Go East</button>
+        <button onclick="gameEngine.move('west')">Go West</button>
+    </div>
+    <div id="sidebar">
+        <h2>Player Info</h2>
+        <p id="player-name">Loading...</p>
+        <p>Health: 100</p>
+        <!-- Add more player stats here -->
+    </div>
+
+    <script type="module" src="./src/main.ts"></script>
+</body>
+</html>

@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
 import java.util.Map;
@@ -23,7 +24,7 @@ public class ChatGptService {
         this.apiKey = apiKey;
     }
 
-    public CustomerServiceEvaluation getResponse(String transcript) {
+    public Mono<CustomerServiceEvaluation> getResponse(String transcript) {
         // Prepare the messages
         var prompt = buildPrompt(transcript);
 
@@ -36,27 +37,27 @@ public class ChatGptService {
         var request = new ChatGptRequest("gpt-4o-mini", messages);
 
         // Send the API call
-        String rawResponse = webClient.post()
+        return webClient.post()
                 .header("Authorization", "Bearer " + apiKey)
                 .header("Content-Type", "application/json")
                 .bodyValue(request)
                 .retrieve()
                 .bodyToMono(String.class) // Get raw JSON for debugging
-                .block();
+                .flatMap(rawResponse -> {
+                    try {
+                        // Step 1: Parse the outer response
+                        ObjectMapper objectMapper = new ObjectMapper();
+                        ChatGptResponse chatGptResponse = objectMapper.readValue(rawResponse, ChatGptResponse.class);
 
-        // Deserialize the response
-        try {
-            // Step 1: Parse the outer response
-            ObjectMapper objectMapper = new ObjectMapper();
-            ChatGptResponse chatGptResponse = objectMapper.readValue(rawResponse, ChatGptResponse.class);
+                        // Step 2: Extract and parse the nested JSON from "content"
+                        String content = chatGptResponse.getChoices().get(0).getMessage().getContent();
+                        CustomerServiceEvaluation evaluation = objectMapper.readValue(content, CustomerServiceEvaluation.class);
 
-            // Step 2: Extract and parse the nested JSON from "content"
-            String content = chatGptResponse.getChoices().get(0).getMessage().getContent();
-            return objectMapper.readValue(content, CustomerServiceEvaluation.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException("Failed to parse ChatGPT response.");
-        }
+                        return Mono.just(evaluation);
+                    } catch (Exception e) {
+                        return Mono.error(new RuntimeException("Failed to parse ChatGPT response.", e));
+                    }
+                });
     }
 
     private String buildPrompt(String transcript) {

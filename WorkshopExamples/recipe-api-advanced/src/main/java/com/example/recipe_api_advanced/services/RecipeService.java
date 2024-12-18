@@ -70,6 +70,7 @@ public class RecipeService {
         recipe.setName(createRecipeDto.getName());
         recipe.setIngredients(createRecipeDto.getIngredients());
         recipe.setInstructions(createRecipeDto.getInstructions());
+        recipe.setRecipeImage(createRecipeDto.getRecipeImage());
 
         Recipe savedRecipe = recipeRepository.save(recipe);
         return RecipeDto.fromEntity(savedRecipe);
