@@ -1,4 +1,4 @@
-import { FlashCard } from "./Flashcard";
+import { FlashCard } from "./FlashCard";
 
 export interface Deck {
     id:number;
