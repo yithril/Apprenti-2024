@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Initialize the game engine with fetched nodes and player name
         gameEngine = new GameEngine(gameNodes, "Player1");
 
+        //DO NOT FORGET THIS
+        //OR THE GAME ENGINE GOES AWAY
         (window as any).gameEngine = gameEngine;
         
         // Set the initial display
