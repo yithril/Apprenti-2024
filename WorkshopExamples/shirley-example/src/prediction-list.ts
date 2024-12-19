@@ -14,7 +14,7 @@ fetchButton.addEventListener("click", async () => {
 
   errorDiv.textContent = ""; 
   try {
-    const response = await fetch(`/api/predictions/${username}`);
+    const response = await fetch(`http://localhost:8080/api/predictions/${username}`);
     if (!response.ok) {
       throw new Error("Failed to fetch predictions.");
     }
